@@ -19,6 +19,7 @@ public class BPMSyncer : MonoBehaviour {
     void Update() {
 
         t += Time.deltaTime;
+        if(t > 5.0f) this.gameObject.SetActive(false);
 
         CalculateBPM();
         
@@ -56,10 +57,5 @@ public class BPMSyncer : MonoBehaviour {
         GUILayout.Label($"time: {t}");
         GUILayout.Label($"bpm: {BPM}");
 
-        // GUILayout.Label("配列の中身");
-        // GUILayout.Label($"{intarvalArray[0]}");
-        // GUILayout.Label($"{intarvalArray[1]}");
-        // GUILayout.Label($"{intarvalArray[2]}");
-        // GUILayout.Label($"{intarvalArray[3]}");
     }
 }
