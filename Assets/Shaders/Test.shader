@@ -1,54 +1,55 @@
-Shader "Hidden/Example"
+Shader "Hidden/Test"
 {
+    Properties
+    {
+        _MainTex ("Texture", 2D) = "white" {}
+        _Col ("Color", Color) = (1, 0, 0, 1)
+    }
     SubShader
     {
+        // No culling or depth
+        Cull Off ZWrite Off ZTest Always
+
         Pass
         {
-            HLSLPROGRAM
+            CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
-            TEXTURE2D(_SourceTex);
-            SAMPLER(sampler_SourceTex);
+            #include "UnityCG.cginc"
 
-            struct Attributes
+            struct appdata
             {
-                float4 positionOS : POSITION;
+                float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
             };
 
-            struct Varyings
+            struct v2f
             {
-                float4 positionHCS : SV_POSITION;
                 float2 uv : TEXCOORD0;
-                UNITY_VERTEX_OUTPUT_STEREO
+                float4 vertex : SV_POSITION;
             };
 
-            Varyings vert(Attributes IN)
-            {                
-                Varyings OUT;
-                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(OUT);
-                OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
-                OUT.uv = IN.uv;
-                return OUT;
+            v2f vert (appdata v)
+            {
+                v2f o;
+                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.uv = v.uv;
+                return o;
             }
 
-            half4 frag(Varyings IN) : SV_Target
+            sampler2D _MainTex;
+            float4 _Col;
+
+            fixed4 frag (v2f i) : SV_Target
             {
-                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(IN);
-
-                IN.uv -= 0.5;
-                IN.uv *= 2.0;
-
-                IN.uv = abs(IN.uv);
-
-                IN.uv.x += sin(IN.uv.y*10.0)*0.1;
-
-                half4 col = SAMPLE_TEXTURE2D(_SourceTex, sampler_SourceTex, IN.uv);
+                fixed4 col = tex2D(_MainTex, i.uv);
+                // just invert the colors
+                //col.rgb = 1 - col.rgb;
+                col.rgb *= _Col.rgb;
                 return col;
             }
-            ENDHLSL
+            ENDCG
         }
     }
 }

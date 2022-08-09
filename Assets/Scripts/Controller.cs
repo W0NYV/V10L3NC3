@@ -9,6 +9,15 @@ public class Controller : MonoBehaviour {
 
     public GameObject bpmSyncer;
     public GameObject cube;
+    public GameObject camera;
+    
+    private Material mat;
+
+    private void Start() {
+
+        mat = camera.GetComponent<CameraFilter>().mat;
+        mat.SetColor("_Col", new Color(0.0f, 0.0f, 1.0f, 1.0f));
+    }
 
     // Update is called once per frame
     void Update() {
