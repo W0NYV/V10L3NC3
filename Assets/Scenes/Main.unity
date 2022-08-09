@@ -261,9 +261,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Script: {fileID: 11500000, guid: 65f883009e233e341a9cdc4f293a7048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mat: {fileID: 2100000, guid: 419d52836cb1049459d99871d84dcb85, type: 2}
 --- !u!1 &1387152033
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,6 +362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bpmSyncer: {fileID: 898013354}
   cube: {fileID: 7096098603947657782, guid: 2d794c220301f4a47b2ba159a9c0621c, type: 3}
+  camera: {fileID: 963194225}
 --- !u!114 &2005061255
 MonoBehaviour:
   m_ObjectHideFlags: 0
