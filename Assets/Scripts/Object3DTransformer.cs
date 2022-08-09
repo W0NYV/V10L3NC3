@@ -6,42 +6,33 @@ using DG.Tweening;
 
 public class Object3DTransformer : MonoBehaviour {
     
-    public Action action;
-
-    // Start is called before the first frame update
-    void Start() {
-
-        action();
-
-    }
-
-    public void TranslateUp() {
-        transform.DOMoveY(1.0f, 60.0f/BPMSyncer.BPM).OnComplete(() => {
-            Destroy(this.gameObject);
+    static public void TranslateUp(GameObject obj) {
+        obj.transform.DOMoveY(1.0f, 60.0f/BPMSyncer.BPM).OnComplete(() => {
+            Destroy(obj);
         });
     }
 
-    public void TranslateDown() {
-        transform.DOMoveY(-1.0f, 60.0f/BPMSyncer.BPM).OnComplete(() => {
-            Destroy(this.gameObject);
+    static public void TranslateDown(GameObject obj) {
+        obj.transform.DOMoveY(-1.0f, 60.0f/BPMSyncer.BPM).OnComplete(() => {
+            Destroy(obj);
         });
     }
 
-    public void TranslateRight() {
-        transform.DOMoveX(1.66666f, 60.0f/BPMSyncer.BPM).OnComplete(() => {
-            Destroy(this.gameObject);
+    static public void TranslateRight(GameObject obj) {
+        obj.transform.DOMoveX(1.66666f, 60.0f/BPMSyncer.BPM).OnComplete(() => {
+            Destroy(obj);
         });
     }
 
-    public void TranslateLeft() {
-        transform.DOMoveX(-1.66666f, 60.0f/BPMSyncer.BPM).OnComplete(() => {
-            Destroy(this.gameObject);
+    static public void TranslateLeft(GameObject obj) {
+        obj.transform.DOMoveX(-1.66666f, 60.0f/BPMSyncer.BPM).OnComplete(() => {
+            Destroy(obj);
         });
     }
 
-    public void ShakePosition() {
-        transform.DOShakePosition(duration: 60.0f/BPMSyncer.BPM, strength: BPMSyncer.BPM/60.0f).OnComplete(() => {
-            Destroy(this.gameObject);
+    static public void ShakePosition(GameObject obj) {
+        obj.transform.DOShakePosition(duration: 60.0f/BPMSyncer.BPM, strength: BPMSyncer.BPM/60.0f).OnComplete(() => {
+            Destroy(obj);
         });
     }
 
