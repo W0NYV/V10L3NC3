@@ -51,11 +51,11 @@ public class BPMSyncer : MonoBehaviour {
         t = 0.0f;
     }
 
-    private void OnGUI() {
-        GUI.skin.label.fontSize = 50;
+    // private void OnGUI() {
+    //     GUI.skin.label.fontSize = 50;
 
-        GUILayout.Label($"time: {t}");
-        GUILayout.Label($"bpm: {BPM}");
+    //     GUILayout.Label($"time: {t}");
+    //     GUILayout.Label($"bpm: {BPM}");
 
-    }
+    // }
 }
