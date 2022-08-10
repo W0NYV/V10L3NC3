@@ -58,6 +58,42 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ScaleRotate4",
+                    "type": "PassThrough",
+                    "id": "1f42fe7f-4c63-4916-9e00-0e3814e6ddda",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PPPixelate",
+                    "type": "PassThrough",
+                    "id": "ddce8e0d-90a6-492d-9c2b-6173a1ed2271",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PPReflectTile",
+                    "type": "PassThrough",
+                    "id": "4b137d23-c9f1-44ab-a85b-a1239e13f507",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PPRGBScale",
+                    "type": "PassThrough",
+                    "id": "67e2e4de-caaf-4dca-89bb-32dcedae3957",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -124,6 +160,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "TranslateLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd48b074-4eec-4de4-928f-16c10c712ff9",
+                    "path": "<MidiDevice>/control065",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScaleRotate4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a4a78ebe-c893-4f34-8e17-dc7290938cac",
+                    "path": "<MidiDevice>/control045",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PPPixelate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7b918390-8afa-4f5f-b51d-fd7a288106f2",
+                    "path": "<MidiDevice>/control041",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PPReflectTile",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a48acf3e-f596-4ee8-9c46-8a0938ef5cfc",
+                    "path": "<MidiDevice>/control042",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PPRGBScale",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

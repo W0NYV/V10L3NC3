@@ -34,30 +34,17 @@ public class TextureLoader : MonoBehaviour {
         mat.SetTexture("_MainTex", tex);
     }
 
-    private void OnGUI() {
-        GUI.skin.label.fontSize = 50;
+    // private void OnGUI() {
+    //     GUI.skin.label.fontSize = 50;
 
-        GUILayout.Label($"file: {str}");
+    //     GUILayout.Label($"file: {str}");
 
-    }
+    // }
 
     // Start is called before the first frame update
     void Start() {
         mat.SetTexture("_MainTex", defaultTex);
         rawimage.texture = defaultTex;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void CreateTexture(string path) {
-
-        var imageBytes = File.ReadAllBytes(path);
-        Debug.Log(imageBytes);
-
     }
 
 }
