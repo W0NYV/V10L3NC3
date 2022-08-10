@@ -51,14 +51,17 @@ public class Controller : MonoBehaviour {
         _input.actions["TranslateDown"].performed += onTranslateDown;
         _input.actions["TranslateRight"].performed += onTranslateRight;
         _input.actions["TranslateLeft"].performed += onTranslateLeft;
+        _input.actions["RotateY"].performed += onRotateY;
 
         _input.actions["ShakePosition"].performed += onShakePosition;
         _input.actions["ScaleRotate4"].performed += onScaleRotate4;
+        _input.actions["ShakeSize"].performed += onShakeSize;
 
         _input.actions["PPPixelate"].performed += onPPPixelate;
         _input.actions["PPReflectTile"].performed += onPPReflectTile;
         _input.actions["PPRGBScale"].performed += onPPRGBScale;
 
+        _input.actions["CameraShake"].performed += onCameraShake;
     }
 
     private void OnDisable() {
@@ -68,13 +71,17 @@ public class Controller : MonoBehaviour {
         _input.actions["TranslateDown"].performed -= onTranslateDown;
         _input.actions["TranslateRight"].performed -= onTranslateRight;
         _input.actions["TranslateLeft"].performed -= onTranslateLeft;
+        _input.actions["RotateY"].performed -= onRotateY;
 
         _input.actions["ShakePosition"].performed -= onShakePosition;
         _input.actions["ScaleRotate4"].performed -= onScaleRotate4;
-    
+        _input.actions["ShakeSize"].performed -= onShakeSize;
+
         _input.actions["PPPixelate"].performed -= onPPPixelate;
         _input.actions["PPReflectTile"].performed -= onPPReflectTile;
         _input.actions["PPRGBScale"].performed -= onPPRGBScale;
+
+        _input.actions["CameraShake"].performed -= onCameraShake;
     }
 
     //-----------------------------------------------------------------
@@ -135,6 +142,20 @@ public class Controller : MonoBehaviour {
         }
     }
 
+    private void onShakeSize(InputAction.CallbackContext obj) {
+        if(obj.ReadValue<float>() == 1) {
+            GameObject o = Instantiate(cube, new Vector3(0, 0, 1.5f), Quaternion.identity);
+            Object3DTransformer.ShakeSize(o);
+        }
+    }
+
+    private void onRotateY(InputAction.CallbackContext obj) {
+        if(obj.ReadValue<float>() == 1) {
+            GameObject o = Instantiate(cube, new Vector3(0, 0, 1.5f), Quaternion.identity);
+            Object3DTransformer.RotateY(o);        
+        }
+    }
+
 
     private void onPPPixelate(InputAction.CallbackContext obj) {
         if(obj.ReadValue<float>() == 1) {
@@ -153,6 +174,13 @@ public class Controller : MonoBehaviour {
         if(obj.ReadValue<float>() == 1) {
             c_rgbScale.enabled = !c_rgbScale.isActiveAndEnabled;
             if(c_rgbScale.isActiveAndEnabled) m_rgbScale.SetFloat("_BPM", BPMSyncer.BPM);
+        }
+    }
+
+
+    private void onCameraShake(InputAction.CallbackContext obj) {
+        if(obj.ReadValue<float>() == 1) {
+            Object3DTransformer.ShakeCamera(camera);
         }
     }
 

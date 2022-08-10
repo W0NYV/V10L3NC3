@@ -69,6 +69,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "RotateY",
+                    "type": "PassThrough",
+                    "id": "db1d358f-d8a3-46e7-ac67-1d5fc7accabb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ShakeSize",
+                    "type": "PassThrough",
+                    "id": "9c79ce60-6a80-4f80-adc0-5aaf268ea339",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "PPPixelate",
                     "type": "PassThrough",
                     "id": "ddce8e0d-90a6-492d-9c2b-6173a1ed2271",
@@ -90,6 +108,15 @@
                     "name": "PPRGBScale",
                     "type": "PassThrough",
                     "id": "67e2e4de-caaf-4dca-89bb-32dcedae3957",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CameraShake",
+                    "type": "PassThrough",
+                    "id": "041daa4f-8921-4a3b-9116-ad5c81850ddd",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -204,6 +231,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "PPRGBScale",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4529effa-630c-406a-b76f-8b82f008aac1",
+                    "path": "<MidiDevice>/control036",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateY",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f9a0e4ef-950f-4671-aa1a-d37c92c95180",
+                    "path": "<MidiDevice>/control062",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraShake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d13969b9-8395-4801-8c07-b4c87e25cc57",
+                    "path": "<MidiDevice>/control037",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShakeSize",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

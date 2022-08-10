@@ -36,6 +36,12 @@ public class Object3DTransformer : MonoBehaviour {
         });
     }
 
+    static public void ShakeCamera(GameObject obj) {
+        obj.transform.DOShakePosition(duration: 60.0f/BPMSyncer.BPM, strength: 2.0f).OnComplete(() => {
+            obj.transform.DOMove(new Vector3(0, 0, 3.0f), 0.05f);
+        });
+    }
+
     static public void ScaleRotate4(GameObject obj) {
 
         float duration = 60.0f / BPMSyncer.BPM / 2.0f;
@@ -71,5 +77,16 @@ public class Object3DTransformer : MonoBehaviour {
         });
     }
 
+    static public void RotateY(GameObject obj) {
+        obj.transform.DORotate(new Vector3(0, 360.0f, 0), 60.0f/BPMSyncer.BPM, RotateMode.FastBeyond360).OnComplete(() => {
+            Destroy(obj);
+        });
+    }
+
+    static public void ShakeSize(GameObject obj) {
+        obj.transform.DOShakeScale(60.0f/BPMSyncer.BPM, 1.5f).OnComplete(() => {
+            Destroy(obj);
+        });
+    }
 
 }
