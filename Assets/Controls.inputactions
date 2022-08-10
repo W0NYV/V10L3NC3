@@ -1,0 +1,146 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "Action",
+            "id": "df6aa3e1-8548-4e0a-b3a6-41e9c95b9e74",
+            "actions": [
+                {
+                    "name": "BPMSync",
+                    "type": "PassThrough",
+                    "id": "e57d4e9c-63f8-45b5-b972-a87ae31d5bb8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ShakePosition",
+                    "type": "PassThrough",
+                    "id": "dfd17a8c-7bdc-46f5-b175-7bba31d42a3a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TranslateUp",
+                    "type": "PassThrough",
+                    "id": "242a45fc-f8d2-4f5e-878c-074e66ca57ce",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TranslateDown",
+                    "type": "PassThrough",
+                    "id": "6adb88f6-eb86-4474-b3c3-ecd32c45207b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TranslateRight",
+                    "type": "PassThrough",
+                    "id": "7b665e88-3077-4aa3-97b2-94d671495db3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TranslateLeft",
+                    "type": "PassThrough",
+                    "id": "93ed95dd-d158-4883-b72a-593833cde64a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fb2bbd32-c03a-4603-8bd2-dd8edbc5594c",
+                    "path": "<MidiDevice>/control046",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BPMSync",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a0100c99-c8db-4738-ad76-76a56e0f361e",
+                    "path": "<MidiDevice>/control064",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShakePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "24f80f3a-a2de-4b86-a510-92e0d201f425",
+                    "path": "<MidiDevice>/control032",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TranslateUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e3bf7075-a0f6-4039-9ca7-5d7a7beb7761",
+                    "path": "<MidiDevice>/control033",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TranslateDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "de273dfa-f973-4036-8e61-f1166ffa7518",
+                    "path": "<MidiDevice>/control034",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TranslateRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "05444724-76db-41ab-9acd-3f752ffbe7c6",
+                    "path": "<MidiDevice>/control035",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TranslateLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "MIDI control scheme",
+            "bindingGroup": "MIDI control scheme",
+            "devices": [
+                {
+                    "devicePath": "<MidiDevice>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
