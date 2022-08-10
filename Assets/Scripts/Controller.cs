@@ -13,7 +13,16 @@ public class Controller : MonoBehaviour {
     public GameObject cube;
     public GameObject camera;
     
-    private Material mat;
+    private CameraFilter[] cameraFilter;
+
+    private Material m_pixelate;
+    private CameraFilter c_pixelate;
+
+    private Material m_reflectTile;
+    private CameraFilter c_reflectTile;
+
+    private Material m_rgbScale;
+    private CameraFilter c_rgbScale;
 
     private void Awake() {
 
@@ -23,41 +32,53 @@ public class Controller : MonoBehaviour {
 
     private void Start() {
 
-        mat = camera.GetComponent<CameraFilter>().mat;
-        mat.SetColor("_Col", new Color(0.0f, 0.0f, 1.0f, 1.0f));
+        cameraFilter = camera.GetComponents<CameraFilter>();
+
+        c_pixelate = cameraFilter[0];
+        m_pixelate = c_pixelate.mat;
+
+        c_reflectTile = cameraFilter[1];
+        m_reflectTile = c_reflectTile.mat;
+
+        c_rgbScale = cameraFilter[2];
+        m_rgbScale = c_rgbScale.mat;
     }
   
     private void OnEnable() {
         _input.actions["BPMSync"].performed += onBPMSync;
 
-        _input.actions["ShakePosition"].performed += onShakePosition;
         _input.actions["TranslateUp"].performed += onTranslateUp;
         _input.actions["TranslateDown"].performed += onTranslateDown;
         _input.actions["TranslateRight"].performed += onTranslateRight;
         _input.actions["TranslateLeft"].performed += onTranslateLeft;
+
+        _input.actions["ShakePosition"].performed += onShakePosition;
+        _input.actions["ScaleRotate4"].performed += onScaleRotate4;
+
+        _input.actions["PPPixelate"].performed += onPPPixelate;
+        _input.actions["PPReflectTile"].performed += onPPReflectTile;
+        _input.actions["PPRGBScale"].performed += onPPRGBScale;
 
     }
 
     private void OnDisable() {
         _input.actions["BPMSync"].performed -= onBPMSync;
         
-        _input.actions["ShakePosition"].performed -= onShakePosition;
         _input.actions["TranslateUp"].performed -= onTranslateUp;
         _input.actions["TranslateDown"].performed -= onTranslateDown;
         _input.actions["TranslateRight"].performed -= onTranslateRight;
         _input.actions["TranslateLeft"].performed -= onTranslateLeft;
 
+        _input.actions["ShakePosition"].performed -= onShakePosition;
+        _input.actions["ScaleRotate4"].performed -= onScaleRotate4;
+    
+        _input.actions["PPPixelate"].performed -= onPPPixelate;
+        _input.actions["PPReflectTile"].performed -= onPPReflectTile;
+        _input.actions["PPRGBScale"].performed -= onPPRGBScale;
     }
 
     //-----------------------------------------------------------------
     //-----------------------------------------------------------------
-    private void onShakePosition(InputAction.CallbackContext obj) {
-        if(obj.ReadValue<float>() == 1) {
-            GameObject o = Instantiate(cube, Vector3.zero, Quaternion.identity);
-            Object3DTransformer.ShakePosition(o);
-        };
-    }
-
     private void onBPMSync(InputAction.CallbackContext obj) {
         if(obj.ReadValue<float>() == 1) {
             if(bpmSyncer.activeSelf) {
@@ -68,6 +89,7 @@ public class Controller : MonoBehaviour {
             }
         }
     }
+
 
     private void onTranslateUp(InputAction.CallbackContext obj) {
         if(obj.ReadValue<float>() == 1) {
@@ -94,6 +116,43 @@ public class Controller : MonoBehaviour {
         if(obj.ReadValue<float>() == 1) {
             GameObject o = Instantiate(cube, new Vector3(1.666666f, 0.0f, 0.0f), Quaternion.identity);
             Object3DTransformer.TranslateLeft(o);
+        }
+    }
+
+
+    private void onShakePosition(InputAction.CallbackContext obj) {
+        if(obj.ReadValue<float>() == 1) {
+            GameObject o = Instantiate(cube, Vector3.zero, Quaternion.identity);
+            Object3DTransformer.ShakePosition(o);
+        }
+    }
+
+    private void onScaleRotate4(InputAction.CallbackContext obj) {
+        if(obj.ReadValue<float>() == 1) {
+            GameObject o = Instantiate(cube, new Vector3(1.5f, 0, 0), Quaternion.identity);
+            o.transform.localScale = Vector3.zero;
+            Object3DTransformer.ScaleRotate4(o);
+        }
+    }
+
+
+    private void onPPPixelate(InputAction.CallbackContext obj) {
+        if(obj.ReadValue<float>() == 1) {
+            c_pixelate.enabled = !c_pixelate.isActiveAndEnabled;
+            if(c_pixelate.isActiveAndEnabled) m_pixelate.SetFloat("_BPM", BPMSyncer.BPM);
+        }
+    }
+
+    private void onPPReflectTile(InputAction.CallbackContext obj) {
+        if(obj.ReadValue<float>() == 1) {
+            c_reflectTile.enabled = !c_reflectTile.isActiveAndEnabled;
+        }
+    }
+
+    private void onPPRGBScale(InputAction.CallbackContext obj) {
+        if(obj.ReadValue<float>() == 1) {
+            c_rgbScale.enabled = !c_rgbScale.isActiveAndEnabled;
+            if(c_rgbScale.isActiveAndEnabled) m_rgbScale.SetFloat("_BPM", BPMSyncer.BPM);
         }
     }
 

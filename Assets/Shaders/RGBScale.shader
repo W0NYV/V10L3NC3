@@ -1,9 +1,9 @@
-Shader "Hidden/Test"
+Shader "Hidden/RGBScale"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _Col ("Color", Color) = (1, 0, 0, 1)
+        _BPM ("BPM", float) = 120.0
     }
     SubShader
     {
@@ -39,15 +39,37 @@ Shader "Hidden/Test"
             }
 
             sampler2D _MainTex;
-            float4 _Col;
+            float _BPM;
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv);
-                // just invert the colors
-                //col.rgb = 1 - col.rgb;
-                col.rgb *= _Col.rgb;
-                return col;
+
+                float t = _BPM/60.0*_Time.y*4.0;
+                float t2 = abs(sin(-t));
+                float t3 = abs(sin(-t+0.3));
+                float t4 = abs(sin(-t+0.6));
+
+                float2 p = i.uv;
+                float2 p2 = i.uv;
+                float2 p3 = i.uv;
+
+
+                p *= (0.5 + 0.5*t2);
+                p += 0.25 - 0.25*t2;
+
+                p2 *= (0.5 + 0.5*t3);
+                p2 += 0.25 - 0.25*t3;
+
+                p3 *= (0.5 + 0.5*t4);
+                p3 += 0.25 - 0.25*t4;
+
+                fixed4 col = tex2D(_MainTex, p);
+                fixed4 col2 = tex2D(_MainTex, p2);
+                fixed4 col3 = tex2D(_MainTex, p3);
+
+                fixed4 dest = fixed4(col.r, col2.g, col3.b, 1.0);
+
+                return dest;
             }
             ENDCG
         }

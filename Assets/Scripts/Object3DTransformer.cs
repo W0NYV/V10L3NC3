@@ -36,5 +36,40 @@ public class Object3DTransformer : MonoBehaviour {
         });
     }
 
+    static public void ScaleRotate4(GameObject obj) {
+
+        float duration = 60.0f / BPMSyncer.BPM / 2.0f;
+        Vector3 angle = new Vector3(180, 180, 0);
+        Vector3 scale = new Vector3(0.7f, -0.7f, 0.7f);
+
+        obj.transform.DOScale(scale, duration);
+        obj.transform.DORotate(angle, duration).OnComplete(() => {
+           
+            GameObject o = Instantiate(obj, new Vector3(0.5f, 0, 0), Quaternion.identity);
+
+            o.transform.DOScale(scale, duration);
+            o.transform.DORotate(angle, duration).OnComplete(() => {
+
+                GameObject o2 = Instantiate(o, new Vector3(-0.5f, 0, 0), Quaternion.identity);
+
+                o2.transform.DOScale(scale, duration);
+                o2.transform.DORotate(angle, duration).OnComplete(() => {
+
+                    GameObject o3 = Instantiate(o2, new Vector3(-1.5f, 0, 0), Quaternion.identity);
+
+                    o3.transform.DOScale(scale, duration);
+                    o3.transform.DORotate(angle, duration).OnComplete(() => {
+          
+                        Destroy(obj);
+                        Destroy(o);
+                        Destroy(o2);
+                        Destroy(o3);
+
+                    });  
+                });
+            });
+        });
+    }
+
 
 }
