@@ -69,9 +69,27 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ScaleRotate42",
+                    "type": "PassThrough",
+                    "id": "cbc45b50-6600-4a72-af70-5b0f100286b0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "RotateY",
                     "type": "PassThrough",
                     "id": "db1d358f-d8a3-46e7-ac67-1d5fc7accabb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TranslateZ",
+                    "type": "PassThrough",
+                    "id": "ec6678ba-5c76-4777-abba-c2b32f7c85c6",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -114,9 +132,45 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "PPMandala",
+                    "type": "PassThrough",
+                    "id": "37c12b7b-b742-4fc5-9ed4-f4cad1e9aed0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PPStrobe",
+                    "type": "PassThrough",
+                    "id": "caec4043-629b-44da-a0cd-026658577f8b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "CameraShake",
                     "type": "PassThrough",
                     "id": "041daa4f-8921-4a3b-9116-ad5c81850ddd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Atsumaru8",
+                    "type": "PassThrough",
+                    "id": "7a32c868-fb36-4b46-bfc2-c2e45e760696",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwitchObj",
+                    "type": "PassThrough",
+                    "id": "1ea92db1-d133-4063-af6a-f2c58ee1fbab",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -127,7 +181,7 @@
                 {
                     "name": "",
                     "id": "fb2bbd32-c03a-4603-8bd2-dd8edbc5594c",
-                    "path": "<MidiDevice>/control046",
+                    "path": "<MidiDevice>/control064",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -138,7 +192,7 @@
                 {
                     "name": "",
                     "id": "a0100c99-c8db-4738-ad76-76a56e0f361e",
-                    "path": "<MidiDevice>/control064",
+                    "path": "<MidiDevice>/note059",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -149,7 +203,7 @@
                 {
                     "name": "",
                     "id": "24f80f3a-a2de-4b86-a510-92e0d201f425",
-                    "path": "<MidiDevice>/control032",
+                    "path": "<MidiDevice>/note048",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -160,7 +214,7 @@
                 {
                     "name": "",
                     "id": "e3bf7075-a0f6-4039-9ca7-5d7a7beb7761",
-                    "path": "<MidiDevice>/control033",
+                    "path": "<MidiDevice>/note050",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -171,7 +225,7 @@
                 {
                     "name": "",
                     "id": "de273dfa-f973-4036-8e61-f1166ffa7518",
-                    "path": "<MidiDevice>/control034",
+                    "path": "<MidiDevice>/note052",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -182,7 +236,7 @@
                 {
                     "name": "",
                     "id": "05444724-76db-41ab-9acd-3f752ffbe7c6",
-                    "path": "<MidiDevice>/control035",
+                    "path": "<MidiDevice>/note053",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -193,7 +247,7 @@
                 {
                     "name": "",
                     "id": "dd48b074-4eec-4de4-928f-16c10c712ff9",
-                    "path": "<MidiDevice>/control065",
+                    "path": "<MidiDevice>/note060",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -204,7 +258,7 @@
                 {
                     "name": "",
                     "id": "a4a78ebe-c893-4f34-8e17-dc7290938cac",
-                    "path": "<MidiDevice>/control045",
+                    "path": "<MidiDevice>/note049",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -215,7 +269,7 @@
                 {
                     "name": "",
                     "id": "7b918390-8afa-4f5f-b51d-fd7a288106f2",
-                    "path": "<MidiDevice>/control041",
+                    "path": "<MidiDevice>/note051",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -226,7 +280,7 @@
                 {
                     "name": "",
                     "id": "a48acf3e-f596-4ee8-9c46-8a0938ef5cfc",
-                    "path": "<MidiDevice>/control042",
+                    "path": "<MidiDevice>/note056",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -237,7 +291,7 @@
                 {
                     "name": "",
                     "id": "4529effa-630c-406a-b76f-8b82f008aac1",
-                    "path": "<MidiDevice>/control036",
+                    "path": "<MidiDevice>/note055",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -248,7 +302,7 @@
                 {
                     "name": "",
                     "id": "f9a0e4ef-950f-4671-aa1a-d37c92c95180",
-                    "path": "<MidiDevice>/control062",
+                    "path": "<MidiDevice>/note058",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -259,11 +313,77 @@
                 {
                     "name": "",
                     "id": "d13969b9-8395-4801-8c07-b4c87e25cc57",
-                    "path": "<MidiDevice>/control037",
+                    "path": "<MidiDevice>/note057",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "ShakeSize",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b9bb1359-3177-49e7-89ce-4dad97aa7f03",
+                    "path": "<MidiDevice>/note062",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScaleRotate42",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8ec72d79-653e-4d59-968e-22e7b479534b",
+                    "path": "<MidiDevice>/note054",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PPMandala",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f13daf42-76c8-4a14-8616-201ee42a7d6f",
+                    "path": "<MidiDevice>/note061",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PPStrobe",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fc4bdb06-139e-419c-b249-5a8ffb3f051a",
+                    "path": "<MidiDevice>/note064",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TranslateZ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "043b289e-8ed2-4a43-b022-c0295a5e4d63",
+                    "path": "<MidiDevice>/note065",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Atsumaru8",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b477b3e5-311d-4cdb-b985-17d73bd0caab",
+                    "path": "<MidiDevice>/note070",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchObj",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
